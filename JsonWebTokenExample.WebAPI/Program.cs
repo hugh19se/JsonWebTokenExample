@@ -1,4 +1,6 @@
 using JsonWebTokenExample.Configs;
+using JsonWebTokenExample.WebAPI.Interfaces.Services;
+using JsonWebTokenExample.WebAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -10,6 +12,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//Services
+builder.Services.AddSingleton<IAuthenticationService, AuthenticationService>();
 
 //Configs
 builder.Services.Configure<JWTConfig>(builder.Configuration.GetSection(JWTConfig.ConfigBinding));
