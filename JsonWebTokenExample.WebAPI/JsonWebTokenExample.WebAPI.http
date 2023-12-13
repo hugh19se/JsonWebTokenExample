@@ -1,6 +1,6 @@
-@JsonWebTokenExample.WebAPI_HostAddress = http://localhost:5284
-
-GET {{JsonWebTokenExample.WebAPI_HostAddress}}/weatherforecast/
-Accept: application/json
-
+GET http://localhost:5284/api/v1/Auth/IssueToken?userName=APICallTest HTTP/1.1
 ###
+
+GET http://localhost:5284/api/v1/Auth/TestAuth HTTP/1.1
+Authorization: bearer 
+### Make sure to paste JWT token above
